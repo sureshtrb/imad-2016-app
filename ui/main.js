@@ -1,9 +1,21 @@
 //counter code
 var button = document.getElementById('counter');
-var counter = 0;
 
 button.onclick = function() {
-    counter = counter + 1;
-    var span = document.getElementById('count');
-    span.innerHTML = counter.toString();
+    //create request
+    var request = new XMLHttpRequest();
+    
+    //Capture the response and store in variable
+    request.onreadystatechange = function() {
+        if (tequest.readystatechange === XMLHttpRequest.DONE) {
+            if(request.ststus === 200) {
+                var counter = request.responseText;
+                var span = document.getElementById('count');
+                span.innerHTML = counter.toString();
+            }
+        }
+        
+    };
+        request.open('GET', 'http://sureshtrb.imad.hasura-app.io/counter', true);
+        request.send(null);
 };
