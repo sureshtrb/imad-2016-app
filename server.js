@@ -53,7 +53,7 @@ var articles = {
     }
 };
 var names = [];
-app.get('/submit-name',function() {
+app.get('/submit_name',function() {
     var name = req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
