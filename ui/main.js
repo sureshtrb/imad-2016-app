@@ -19,9 +19,7 @@ button.onclick = function() {
         request.open('GET', 'http://sureshtrb.imad.hasura-app.io/counter', true);
         request.send(null);
 };
-window.onload = function () {
-    document.getElementById('auth').onclick=change;
-};
+
 //Submit Name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
