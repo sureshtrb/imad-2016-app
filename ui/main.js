@@ -21,8 +21,7 @@ button.onclick = function() {
     request.send(null);
 };
 //submit name
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
      //create  a request to the counter endpoint
@@ -45,6 +44,8 @@ submit.onclick = function() {
                 }
                 //not done yet
             };
+            var nameInput = document.getElementById('name');
+            var name = nameInput.value;
             //make the request
             request.open('GET', 'http://sureshtrb.imad.hasura-app.io/submit-name?name='+ name, true);
             request.send(null);
